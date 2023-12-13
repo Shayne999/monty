@@ -54,8 +54,12 @@ void _nop(stack_t **head, unsigned int counter);
 void _add(stack_t **head, unsigned int counter);
 void _swap(stack_t **head, unsigned int counter);
 void _pop(stack_t **head, unsigned int counter);
+void _push(stack_t **head, unsigned int counter);
 void _pint(stack_t **head, unsigned int counter);
 int exec(char *content, stack_t **stack, unsigned int counter, FILE *file);
 int main(int argc, char *argv[]);
+void add_node(stack_t **head, int n);
+void _queue(stack_t **head, unsigned int counter);
+void add_queue(stack_t **head, int n);
 
 #endif
