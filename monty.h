@@ -32,17 +32,30 @@ typedef struct stack_s
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct instruction_s
 {
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct bus_s
+{
+	char *arg;
+	FILE *file;
+	char *content;
+	int lifi;
+}  bus_t;
+extern bus_t bus;
+
+void stack_free(stack_t *head);
 void _pall(stack_t **head, unsigned int counter);
 void _nop(stack_t **head, unsigned int counter);
 void _add(stack_t **head, unsigned int counter);
 void _swap(stack_t **head, unsigned int counter);
 void _pop(stack_t **head, unsigned int counter);
 void _pint(stack_t **head, unsigned int counter);
+int exec(char *content, stack_t **stack, unsigned int counter, FILE *file);
+int main(int argc, char *argv[]);
 
 #endif
